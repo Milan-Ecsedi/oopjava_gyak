@@ -7,10 +7,15 @@ public class Main {
         ember e1= new ember("Gipsz jakab", "1988-1-12","Budapest");
         ember e2= new ember("Teszt Elek", "2003-12-5","Debrecen");
         ember e3= new ember("Kovács Béla", "1973-9-22","Pécs");
+        ember e4= new ember("Bom Ádám", "1999-3-18","Dabas");
+        ember e5= new ember("Jézus Krisztina", "1000-11-30","Afrika");
 
-        System.out.println(e1+" "+ e1.getSzuletesEv());
-        System.out.println(e2+" "+ e2.getSzuletesiHonap());
-        System.out.println(e3+" "+ e3.getSzuletesiNap());
+        ember[] emberTomb= new ember[]{e1,e2,e3,e4,e5};
+        emberek ek= new emberek(emberTomb);
+        System.out.println(ek);
+
+
+
 
     }
 }
