@@ -1,5 +1,7 @@
 package hu.petrik.helloworld_14S;
 
+import java.time.LocalDate;
+
 public class ember {
      private String nev;
      private String SzulDatum;
@@ -31,9 +33,16 @@ public class ember {
 
     }
 
+    public int getEletkor(){
+
+        return LocalDate.now().getYear() - this.getSzuletesEv();
+
+
+    }
+
     @Override
     public String toString() {
-        return String.format("%30s %10s %20s", this.nev,this.SzulDatum,this.SzulHely);
+        return String.format("%30s %10s (%3d év) %20s", this.nev , this.SzulDatum, this.getEletkor() ,this.SzulHely);
     }
 
 
