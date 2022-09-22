@@ -1,5 +1,8 @@
 package hu.petrik.helloworld_14S;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -12,9 +15,21 @@ public class Main {
 
         ember[] emberTomb= new ember[]{e1,e2,e3,e4,e5};
         emberek ek= new emberek(emberTomb);
-        System.out.println(ek);
+        String fajlNev="emberek.txt";
 
+        try {
+            emberek ek2= new emberek(fajlNev);
+            System.out.println(ek2);
+        }
 
+        catch (FileNotFoundException e) {
+            System.out.printf("A(z) %s nem található" , fajlNev);;
+        }
+        catch (IOException e)
+
+        {
+            System.out.println("Ismeretlen hiba történt");
+        }
 
 
     }
