@@ -34,8 +34,13 @@ public class ember {
     }
 
     public int getEletkor(){
-
-        return LocalDate.now().getYear() - this.getSzuletesEv();
+        LocalDate maiDatum = LocalDate.now();
+        boolean voltEIDenSzuletesnapja=maiDatum.getMonthValue()>getSzuletesiNap()||(maiDatum.getMonthValue()>=getSzuletesiHonap()&& maiDatum.getDayOfMonth()>=getSzuletesiNap());
+        int eletkor=LocalDate.now().getYear()-this.getSzuletesEv();
+        if (!voltEIDenSzuletesnapja){
+            eletkor--;
+        }
+        return eletkor;
 
 
     }
